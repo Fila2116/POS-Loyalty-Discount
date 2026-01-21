@@ -1,0 +1,7 @@
+<t t-name="LoyaltyBadge">
+    <t t-if="partner">
+        <span class="badge">
+            <t t-esc="partner.loyalty_tier"/>
+        </span>
+    </t>
+</t>

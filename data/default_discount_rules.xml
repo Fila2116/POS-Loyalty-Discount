@@ -1,0 +1,41 @@
+<odoo>
+    <data noupdate="1">
+
+        <record id="pos_discount_rule_bronze" model="pos.discount.rule">
+            <field name="name">Bronze Loyalty Discount</field>
+            <field name="loyalty_tier">bronze</field>
+            <field name="discount_percentage">2</field>
+            <field name="minimum_order_amount">200</field>
+            <field name="active">True</field>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+        <record id="pos_discount_rule_silver" model="pos.discount.rule">
+            <field name="name">Silver Loyalty Discount</field>
+            <field name="loyalty_tier">silver</field>
+            <field name="discount_percentage">5</field>
+            <field name="minimum_order_amount">300</field>
+            <field name="active">True</field>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+        <record id="pos_discount_rule_gold" model="pos.discount.rule">
+            <field name="name">Gold Loyalty Discount</field>
+            <field name="loyalty_tier">gold</field>
+            <field name="discount_percentage">8</field>
+            <field name="minimum_order_amount">500</field>
+            <field name="active">True</field>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+        <record id="pos_discount_rule_platinum" model="pos.discount.rule">
+            <field name="name">Platinum Loyalty Discount</field>
+            <field name="loyalty_tier">platinum</field>
+            <field name="discount_percentage">12</field>
+            <field name="minimum_order_amount">800</field>
+            <field name="active">True</field>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+    </data>
+</odoo>

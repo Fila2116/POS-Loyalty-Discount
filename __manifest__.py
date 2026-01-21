@@ -4,13 +4,14 @@
     "category": "Point of Sale",
     "summary": "Tier-based loyalty discount system for POS",
     "depends": ["point_of_sale"],
+    "post_init_hook": "post_init_hook",
     "data": [
         "security/security.xml",
         "security/ir.model.access.csv",
         "views/res_partner_views.xml",
         "views/pos_discount_rule_views.xml",
+        "views/pos_loyalty_menu.xml",
         "data/default_discount_rules.xml",
-        "data/loyalty_migration.xml",
     ],
     "assets": {
         "point_of_sale.assets": [

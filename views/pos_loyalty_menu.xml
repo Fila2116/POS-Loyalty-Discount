@@ -1,0 +1,20 @@
+<odoo>
+
+    <menuitem id="menu_pos_loyalty_root"
+              name="Loyalty"
+              parent="point_of_sale.menu_point_root"
+              sequence="60"/>
+
+    <menuitem id="menu_pos_discount_rule"
+              name="Discount Rules"
+              parent="menu_pos_loyalty_root"
+              action="action_pos_discount_rule"
+              sequence="10"/>
+
+    <menuitem id="menu_pos_loyalty_customers"
+              name="Customers"
+              parent="menu_pos_loyalty_root"
+              action="base.action_partner_form"
+              sequence="20"/>
+
+</odoo>
