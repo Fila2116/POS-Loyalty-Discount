@@ -1,4 +1,5 @@
 from odoo import models, fields, api
+from odoo.exceptions import AccessError
 
 class ResPartner(models.Model):
     _inherit = "res.partner"
@@ -27,3 +28,17 @@ class ResPartner(models.Model):
                 partner.loyalty_tier = "silver"
             else:
                 partner.loyalty_tier = "bronze"
+    @api.model
+    def _check_loyalty_manager(self):
+        if not self.env.user.has_group("pos_loyalty_discount.group_loyalty_manager"):
+            raise AccessError("You are not allowed to modify loyalty points.")
+
+    def write(self, vals):
+        if "loyalty_points" in vals:
+            self._check_loyalty_manager()
+        return super().write(vals)
+
+    def create(self, vals):
+        if "loyalty_points" in vals:
+            self._check_loyalty_manager()
+        return super().create(vals)
