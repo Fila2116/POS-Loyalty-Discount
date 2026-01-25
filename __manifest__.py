@@ -15,8 +15,13 @@
     ],
     "assets": {
         "point_of_sale.assets": [
-            "pos_loyalty_discount/static/src/js/*.js",
-            "pos_loyalty_discount/static/src/xml/*.xml",
+            "pos_loyalty_discount/static/src/js/loyalty_discount_utils.js",
+            "pos_loyalty_discount/static/src/js/pos_loyalty_loader.js",
+            "pos_loyalty_discount/static/src/js/pos_order_patch.js",
+            "pos_loyalty_discount/static/src/js/loyalty_popup.js",
+            "pos_loyalty_discount/static/src/js/loyalty_badge.js",
+            "pos_loyalty_discount/static/src/xml/loyalty_badge.xml",
+            "pos_loyalty_discount/static/src/xml/loyalty_popup.xml"
         ],
     },
     "installable": True,

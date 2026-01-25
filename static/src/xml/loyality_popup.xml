@@ -1,0 +1,42 @@
+
+<t t-name="LoyaltyPopup" owl="1">
+    <div class="popup loyalty-popup">
+        <div class="header">
+            <h3>Loyalty Status</h3>
+        </div>
+        
+        <div class="content">
+            <div class="current-tier">
+                <h4>Current Tier: <t t-esc="currentTierInfo.tier.toUpperCase()"/></h4>
+                <p>Points: <strong><t t-esc="currentTierInfo.points"/></strong></p>
+                <p>Discount: <strong><t t-esc="currentTierInfo.discount"/>%</strong></p>
+                <t t-if="currentTierInfo.minAmount > 0">
+                    <p>Minimum Order: <strong><t t-esc="widget.format_currency(currentTierInfo.minAmount)"/></strong></p>
+                </t>
+            </div>
+        
+            <t t-if="nextTierInfo">
+                <div class="next-tier">
+                    <h4>Next Tier: <t t-esc="nextTierInfo.tier.toUpperCase()"/></h4>
+                    <p>Points Needed: <strong><t t-esc="nextTierInfo.pointsNeeded"/></strong></p>
+                    <p>Discount: <strong><t t-esc="nextTierInfo.discount"/>%</strong></p>
+                </div>
+            </t>
+            
+            <t t-if="!nextTierInfo">
+                <div class="max-tier">
+                    <p>🎉 You've reached the highest tier! 🎉</p>
+                </div>
+            </t>
+        </div>
+        
+        <div class="footer">
+            <button class="button cancel" t-on-click="cancel">
+                Close
+            </button>
+            <button class="button confirm" t-on-click="confirm">
+                OK
+            </button>
+        </div>
+    </div>
+</t>

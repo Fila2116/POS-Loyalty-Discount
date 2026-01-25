@@ -1,7 +1,6 @@
 from odoo import api, SUPERUSER_ID
 
 def post_init_hook(env):
-    # ensure superuser context
     env = env(context=dict(env.context, uid=SUPERUSER_ID))
 
     partners = env["res.partner"].search([])

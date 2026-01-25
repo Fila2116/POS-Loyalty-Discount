@@ -1,7 +1,19 @@
-<t t-name="LoyaltyBadge">
-    <t t-if="partner">
-        <span class="badge">
-            <t t-esc="partner.loyalty_tier"/>
+<!-- loyalty_badge.xml -->
+<t t-name="LoyaltyBadge" owl="1">
+    <t t-if="partner and partner.loyalty_tier">
+        <span t-att-class="'loyalty-badge loyalty-tier-' + partner.loyalty_tier">
+            <span class="tier-name">
+                <t t-esc="partner.loyalty_tier.toUpperCase()"/>
+            </span>
+            <span class="points">
+                (<t t-esc="partner.loyalty_points"/> pts)
+            </span>
         </span>
+        <t t-if="pos && pos.get_order()">
+            <span class="discount-applied" t-if="pos.get_order().get_loyalty_discount() > 0">
+                <i class="fa fa-percent"/> 
+                <t t-esc="pos.get_order().get_loyalty_discount()"/>% OFF
+            </span>
+        </t>
     </t>
 </t>
